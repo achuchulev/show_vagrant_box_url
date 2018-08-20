@@ -1,3 +1,4 @@
 language: python
 script:
-- exit 0
+exit 0
+#- bash -x  bash/curl_print_url.sh
