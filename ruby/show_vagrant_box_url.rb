@@ -1,20 +1,18 @@
 #!/usr/bin/env ruby
 
+# define user and box
 puts "Specify user:"
-var1 = gets
+var1 = gets.chomp
 
 puts "Specify box:"
-var2 = gets
-
-
+var2 = gets.chomp
 
 # gem install http, or add `gem "http"` to your Gemfile
 require "http"
 
 api = HTTP.persistent("https://app.vagrantup.com")
 
-#response = api.get("/api/v1/box/achuchulev/xenial64")
-response = api.get("/api/v1/box/":var1 / :var2)
+response = api.get("/api/v1/box/#{var1}/#{var2}")
 
 if response.status.success?
   # Success, the response attributes are available here.
