@@ -16,7 +16,14 @@ response = api.get("/api/v1/box/#{var1}/#{var2}")
 
 if response.status.success?
   # Success, the response attributes are available here.
-  p response.parse["current_version"]["providers"][0]["download_url"]
+#  p response.parse["current_version"]["providers"][0]["download_url"]
+   count=response.parse["current_version"]["providers"]
+     count.each do |item|
+	 item.each do |key,value|
+	   p value if key == "download_url"
+	 end
+     end			
+
 else
   # Error, inspect the `errors` key for more information.
   p response.code, response.body
