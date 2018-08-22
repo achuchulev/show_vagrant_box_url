@@ -1,0 +1,24 @@
+#!/usr/bin/env python
+
+#define variables
+person = raw_input('Enter organization name: ')
+box = raw_input('Enter box name: ')
+link = ("https://app.vagrantup.com/api/v1/box/" + person + '/' + box)
+
+import urllib
+import json
+
+out = urllib.urlopen(link).read()
+
+#out = f.read()
+
+j = json.loads(out)
+
+print (j)
+#print out['current_version']
+
+#print(url + person + '/' + box)
+#print (box)
+#print (url)
+#print out
+
