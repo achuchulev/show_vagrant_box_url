@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 
-#define organization and box
+#define organization and box variables
 echo "Specify user:"
 read var1
-
 echo "Specify box:"
 read var2
 
